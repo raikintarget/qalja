@@ -214,13 +214,31 @@ h1 em{color:var(--gold-l);font-style:italic;display:block}
 /* WA SVG helper */
 .ws{width:16px;height:16px;fill:currentColor;flex-shrink:0}
 
+/* SERVICES GRID */
+.svc-wrap{animation:fir .9s .5s both}
+.svc-head{margin-bottom:14px}
+.svc-head h2{font-family:var(--h);font-size:22px;font-weight:700;color:#fff;margin-bottom:3px;line-height:1.2}
+.svc-head h2 em{color:var(--gold-l);font-style:italic}
+.svc-head p{font-size:12px;color:rgba(255,255,255,.4);margin-bottom:0}
+.svc-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:14px}
+.svc-card{background:rgba(255,255,255,.055);backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:13px 11px;display:flex;align-items:flex-start;gap:9px;transition:all .3s}
+.svc-card:hover{background:rgba(196,149,106,.13);border-color:rgba(196,149,106,.3);transform:translateY(-2px)}
+.svc-ic{font-size:20px;flex-shrink:0;line-height:1;margin-top:1px}
+.svc-card strong{display:block;font-size:12px;font-weight:800;color:#fff;margin-bottom:2px;line-height:1.3}
+.svc-card span{font-size:10px;color:rgba(255,255,255,.42);line-height:1.4}
+.svc-cta{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;padding:13px;border-radius:50px;border:none;cursor:pointer;background:linear-gradient(135deg,var(--green),#1db954);color:#fff;font-weight:900;font-size:14px;font-family:var(--b);box-shadow:0 6px 22px rgba(37,211,102,.35);transition:all .3s;text-decoration:none;position:relative;overflow:hidden}
+.svc-cta::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,transparent,rgba(255,255,255,.2),transparent);transform:translateX(-100%);transition:transform .5s}
+.svc-cta:hover{transform:translateY(-2px);box-shadow:0 10px 32px rgba(37,211,102,.5)}
+.svc-cta:hover::after{transform:translateX(100%)}
+.svc-note{font-size:10px;color:rgba(255,255,255,.25);text-align:center;margin-top:8px}
+
 /* RESPONSIVE */
 @media(max-width:960px){
   .hero-in{grid-template-columns:1fr;text-align:center;padding:48px 20px}
   h1{font-size:38px}
   .h-city,.h-scar,.h-btns,.h-perks{justify-content:center}
   .h-desc{margin:0 auto 24px}
-  .dcard{max-width:480px;margin:0 auto}
+  .svc-wrap{max-width:480px;margin:0 auto}
   .fcta{padding:36px 24px}
 }
 @media(max-width:680px){
@@ -286,27 +304,26 @@ h1 em{color:var(--gold-l);font-style:italic;display:block}
       <div class="h-scar"><span class="dot-r"></span>Мамыр айына тек <strong style="color:#ff8a65;margin:0 4px">3 орын</strong> қалды</div>
     </div>
 
-    <!-- Right — form card -->
-    <div class="dcard">
-      <div class="d-tag">✦ 100% тегін</div>
-      <h2>Тегін<em>диагностика</em></h2>
-      <p>Нөмеріңізді қалдырыңыз — 5 минутта хабарласамыз</p>
-      <ul class="d-list">
-        <li><span class="ic">🩺</span> Диастаз · симфизит · жамбас</li>
-        <li><span class="ic">🤱</span> Лактация бағалауы</li>
-        <li><span class="ic">👶</span> Нәресте дамуы</li>
-        <li><span class="ic">📋</span> Жеке бағдарлама</li>
-      </ul>
-      <form class="d-form" id="df" onsubmit="sendForm(event)">
-        <input class="d-inp" id="dn" type="text" placeholder="Атыңыз" required>
-        <input class="d-inp" id="dp" type="tel" placeholder="+7 700 000 00 00" required>
-        <button class="d-sub" type="submit" id="dsb">
-          <svg class="ws" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.625.846 5.059 2.284 7.034L.789 23.492a.5.5 0 00.612.638l4.67-1.388A11.94 11.94 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-2.15 0-4.168-.67-5.838-1.835a.5.5 0 00-.39-.072l-3.27.972.883-3.14a.5.5 0 00-.06-.42A9.96 9.96 0 012 12C2 6.486 6.486 2 12 2s10 4.486 10 10-4.486 10-10 10z"/></svg>
-          Хабарласу →
-        </button>
-        <div class="d-ok" id="dok">✅ Рахмет! Жақын арада хабарласамыз.</div>
-        <p class="d-note">Телефоныңыз жария етілмейді</p>
-      </form>
+    <!-- Right — services -->
+    <div class="svc-wrap">
+      <div class="d-tag">✦ Біздің қызметтер</div>
+      <div class="svc-head">
+        <h2>Не <em>ұсынамыз?</em></h2>
+        <p>Ана мен бала денсаулығының толық кешені</p>
+      </div>
+      <div class="svc-grid">
+        <div class="svc-card"><span class="svc-ic">🌿</span><div><strong>Дене массажы</strong><span>Релаксация · Тонус · Ауырсынудан арылу</span></div></div>
+        <div class="svc-card"><span class="svc-ic">🩺</span><div><strong>Диастаз / Симфизит</strong><span>Тексеру · Жаттығу · Қалпына келтіру</span></div></div>
+        <div class="svc-card"><span class="svc-ic">🤱</span><div><strong>Лактация кеңесі</strong><span>ГВ қолдауы · Тамақтандыру</span></div></div>
+        <div class="svc-card"><span class="svc-ic">👶</span><div><strong>Нәресте дамуы</strong><span>Бағалау · Массаж · Жаттығу</span></div></div>
+        <div class="svc-card"><span class="svc-ic">🍽️</span><div><strong>5 мезгіл тамақ</strong><span>Дұрыс тамақтану · Диета кеңесі</span></div></div>
+        <div class="svc-card"><span class="svc-ic">📋</span><div><strong>Жеке бағдарлама</strong><span>6 күн · Нәтиже кепілдігімен</span></div></div>
+      </div>
+      <a href="https://wa.me/77471557418?text=Сәлеметсіз%20бе!%20Қызметтеріңізбен%20танысқым%20келеді,%20баға%20айтыңыздар" class="svc-cta" target="_blank">
+        <svg class="ws" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.625.846 5.059 2.284 7.034L.789 23.492a.5.5 0 00.612.638l4.67-1.388A11.94 11.94 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-2.15 0-4.168-.67-5.838-1.835a.5.5 0 00-.39-.072l-3.27.972.883-3.14a.5.5 0 00-.06-.42A9.96 9.96 0 012 12C2 6.486 6.486 2 12 2s10 4.486 10 10-4.486 10-10 10z"/></svg>
+        Баға білу → WhatsApp
+      </a>
+      <p class="svc-note">Диагностика 100% тегін · Міндеттемесіз</p>
     </div>
 
   </div>
@@ -372,7 +389,7 @@ h1 em{color:var(--gold-l);font-style:italic;display:block}
             <svg class="ws" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.625.846 5.059 2.284 7.034L.789 23.492a.5.5 0 00.612.638l4.67-1.388A11.94 11.94 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-2.15 0-4.168-.67-5.838-1.835a.5.5 0 00-.39-.072l-3.27.972.883-3.14a.5.5 0 00-.06-.42A9.96 9.96 0 012 12C2 6.486 6.486 2 12 2s10 4.486 10 10-4.486 10-10 10z"/></svg>
             WhatsApp-та хабарласу
           </a>
-          <a href="#top" class="btn-o">Форма толтыру ↑</a>
+          <a href="#top" class="btn-o">Жоғары ↑</a>
         </div>
         <div class="fcta-scar">🔥 Мамыр айына тек 3 орын қалды</div>
       </div>
@@ -466,22 +483,6 @@ document.querySelectorAll('.sr').forEach(el=>ob.observe(el));
   tr.addEventListener('touchend',e=>{const dx=e.changedTouches[0].clientX-sx;if(Math.abs(dx)>40)go(dx<0?cur+1:cur-1)});
 })();
 
-/* FORM */
-const SHEETS='https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec';
-const ADMIN='77471557418';
-const CITY='Алматы';
-function sendForm(e){
-  e.preventDefault();
-  const name=document.getElementById('dn').value.trim();
-  const phone=document.getElementById('dp').value.trim();
-  const btn=document.getElementById('dsb'),ok=document.getElementById('dok');
-  btn.disabled=true;btn.textContent='Жіберілуде...';
-  fetch(SHEETS,{method:'POST',mode:'no-cors',headers:{'Content-Type':'application/json'},body:JSON.stringify({name,phone,city:CITY,timestamp:new Date().toLocaleString('ru-KZ')})}).catch(()=>{});
-  ok.style.display='block';btn.style.display='none';
-  setTimeout(()=>{
-    window.open(`https://wa.me/${ADMIN}?text=${encodeURIComponent(`Жаңа өтінім!\nАты: ${name}\nТел: ${phone}\nҚала: ${CITY}`)}`, '_blank');
-  },500);
-}
 
 /* EXIT INTENT */
 (function(){
